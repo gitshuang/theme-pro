@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import { Button } from "antd";
 import './App.css';
 
+const colors = ['red','blue','yellow','green']
+var n = 0
 function App() {
+  const change = () => {
+    var color = colors[n%4]
+    n++
+    window.less
+      .modifyVars({
+        '@primary-color': color,
+        '@layout-header-padding': '0px'
+      })
+      .then(() => {
+        console.log(color);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+        <Button onClick={change}>换肤</Button>
+        <div className="field">field</div>
     </div>
   );
 }
