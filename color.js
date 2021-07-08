@@ -7,12 +7,7 @@ const options = {
   mainLessFile: path.join(__dirname, './src/styles/index.less'),
   themeVariables: [
     //需要动态切换的主题变量
-    '@primary-color',
-    '@secondary-color',
-    '@text-color',
-    '@text-color-secondary',
-    '@heading-color',
-    '@layout-body-background'
+    '@primary-color'
   ],
   indexFileName: 'index.html',
   outputFilePath: path.join(__dirname, './public/color.less') //页面引入的主题变量文件
