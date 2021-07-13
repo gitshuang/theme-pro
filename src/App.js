@@ -1,7 +1,9 @@
 import { Button, Steps } from "antd";
 import ReactECharts from 'echarts-for-react';
-import './styles/variables.less';
 import defaultTheme from './default-theme'
+import { SettingDrawer } from '@ant-design/pro-layout';
+
+import './App.less';
 //import './App.css'
 const colors = ['red','blue','yellow','green']
 const { Step } = Steps;
@@ -53,8 +55,17 @@ function App() {
           <Step title="In Progress" subTitle="Left 00:00:08" description="This is a description." />
           <Step title="Waiting" description="This is a description." />
         </Steps>
-        <div className="field">这是自定义组件，下面是图表组件</div>
+        <div className="selfDefineCom">这是自定义组件</div>
         <ReactECharts option={options} />
+        <SettingDrawer
+        // settings={settings}
+        // onSettingChange={(config) =>
+        //   dispatch({
+        //     type: 'settings/changeSetting',
+        //     payload: config,
+        //   })
+        // }
+      />
     </div>
   );
 }

@@ -1,6 +1,41 @@
 'use strict';
 
 // Do this as the first thing so that any code reading it knows the right env.
+const genCss = require('antd-pro-merge-less');
+const path =  require('path')
+
+console.log(path.join(process.cwd(),'src'),'path.join(process.cwd()====================================================')
+genCss(path.join(process.cwd(),'src'), [
+  {
+    theme: 'dark',
+    fileName: './public/dark.css',
+  },
+  {
+    key: 'dust',
+    fileName: './public/dust.css',
+    modifyVars: {
+      '@primary-color': '#F5222D',
+      '@aaaaa-bbbb': '#F5222D'
+    }
+  },
+  {
+    key: 'mingQing',
+    fileName: './public/mingQing.css',
+    modifyVars: {
+      '@primary-color': '#13C2C2',
+    },
+  },
+],{
+  isModule: false,
+  ignoreAntd: false,
+  ignoreProLayout: true,
+  cache: false
+}).then(function () {
+  console.log('🎊  build theme success');
+}).catch(function (e) {
+  console.log(e);
+});
+
 process.env.BABEL_ENV = 'development';
 process.env.NODE_ENV = 'development';
 
