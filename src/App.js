@@ -1,11 +1,11 @@
-import { Button, Steps } from "antd";
+import { Steps } from "antd";
 import ReactECharts from 'echarts-for-react';
 import defaultTheme from './default-theme'
 import { SettingDrawer } from '@ant-design/pro-layout';
 
 import './App.less';
 //import './App.css'
-const colors = ['red','blue','yellow','green']
+// const colors = ['red','blue','yellow','green']
 const { Step } = Steps;
 var n = 0
 const options = {
@@ -32,24 +32,24 @@ const options = {
   },
 };
 function App() {
-  const change = () => {
-    var color = colors[n%4]
-    n++
-    window.less
-      .modifyVars({
-        '@primary-color': color,
-        '@layout-header-padding': '0px'
-      })
-      .then(() => {
-        console.log(color);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
+  // const change = () => {
+  //   var color = colors[n%4]
+  //   n++
+  //   window.less
+  //     .modifyVars({
+  //       '@primary-color': color,
+  //       '@layout-header-padding': '0px'
+  //     })
+  //     .then(() => {
+  //       console.log(color);
+  //     })
+  //     .catch(error => {
+  //       console.log(error);
+  //     });
+  // }
   return (
     <div className="app">
-        <Button onClick={change} type="primary">换肤</Button>
+        {/* <Button onClick={change} type="primary">换肤</Button> */}
         <Steps current={1}>
           <Step title="Finished" description="This is a description." />
           <Step title="In Progress" subTitle="Left 00:00:08" description="This is a description." />
